@@ -1,0 +1,12 @@
+extends ../layout/common
+
+block content
+  h1 Add Books
+  form(action="/books/create", method="POST", enctype="multipart/form-data")
+    b Title
+    input(name="title",type="text")
+    b Description 
+    input(name="description",type="text")
+    b Image
+    input.form-control(name="image",type="file")
+    button.btn.btn-success Create

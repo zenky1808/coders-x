@@ -1,0 +1,18 @@
+extends ../layout/common
+
+block content
+  h1 Books List
+
+  table.table
+    tr
+      td 
+        b Book Title
+      td 
+        b Action
+    each books in booksList
+      tr
+        td= books.title
+        td
+          a.btn.btn-info(href="/books/"+ books.id + "/update",role='button') Update
+          a.btn.btn-danger(href="/books/" + books.id + "/delete", role='button') Delete
+          

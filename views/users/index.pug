@@ -1,0 +1,25 @@
+extends ../layout/common
+
+block content
+  h1 Users List
+  a.btn.btn-primary(href='/users/create', role='button') ADD USER
+  table.table
+    tr
+      td
+        b Avatar
+      td 
+        b Name
+      td 
+        b Email
+      td 
+        b Action
+    each users in usersList
+      tr
+        td
+          img.avatar(src=users.avatar,width="32")
+        td= users.name
+        td= users.email
+        td
+          a.btn.btn-info(href="/users/"+ users.id + "/update",role='button') Update
+          a.btn.btn-danger(href="/users/" + users.id + "/delete", role='button') Delete
+          

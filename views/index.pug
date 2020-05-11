@@ -1,9 +1,8 @@
-h1 Todo List
-a(href="/todo/create") NEW
-form(action="/todo", method="GET")
-  input(type="text", name="q")
-  button Seach 
-ul
-  each todo in todoList
-    li= todo.todo
-  
+extends layout/common
+
+block content
+  h1 Hello Coders-X
+    a.btn.btn-outline-primary.btn-lg.btn-block(href="./books", role='button') Books
+    a.btn.btn-outline-success.btn-lg.btn-block(href="./users", role='button') Users
+    a.btn.btn-outline-secondary.btn-lg.btn-block(href="./trans", role='button') Transaction
+    a.btn.btn-outline-dark.btn-lg.btn-block(href="./product", role='button') Products

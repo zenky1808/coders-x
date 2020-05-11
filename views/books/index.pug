@@ -1,0 +1,17 @@
+extends ../layout/common
+
+block content
+  h1 Books List
+  a.btn.btn-primary(href="/books/create",  role='button') ADD BOOKS
+  a.btn.btn-primary(href="/books/view",  role='button') VIEW 
+  .contai
+    .row.row-cols-1.row-cols-md-3
+        each books in booksList
+          .col-4.mb-4
+            .card
+              img.card-img-top(src=books.image, width='100px' height='100%')
+              .card-body
+                h5.card-title=books.title
+                p.card-text=books.description
+                a(href='/cart/add/'+books.id) 
+                  .btn.btn-primary Add to cart

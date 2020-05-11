@@ -1,0 +1,16 @@
+extends ../layout/common
+
+block content
+  h1 Create new transaction
+  form(action="/trans/create", method="POST")
+
+    select(name="userId")
+        each user in users
+          option=user.name
+
+    select(name="bookId")
+        each book in books
+          option=book.title
+    select(name="isComplete")
+        option=false
+    button.btn.btn-success Create

@@ -1,0 +1,24 @@
+extends ../layout/common
+
+block content
+
+  h1 Transactions
+  a.btn.btn-primary(href="/trans/create",  role='button') New transaction
+  table.table
+    tr 
+      td
+        b Name User
+      td 
+        b Book
+      td 
+        b Action
+      td 
+        b isComplete
+    each transaction in transactions
+      tr
+        td= transaction.userId
+        td= transaction.bookId
+        td
+          a.btn.btn-primary(href="/trans/" + transaction.id + "/view", role='button') Views
+          a.btn.btn-danger(href="/trans/" + transaction.id + "/delete", role='button') Delete
+        td= transaction.isComplete

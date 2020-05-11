@@ -1,0 +1,12 @@
+extends ../layout/common
+
+block content
+  h1 Update Title
+  form(action="/books/"+books.id+"/update",  method="POST",enctype="multipart/form-data")
+    label Title 
+    input(type="text", name="title",value=books.title)
+    label Description 
+    input(type="text", name="description", value=books.description)
+    label Image 
+    input.form-control(name="image",type="file")
+    button.btn.btn-success Update
